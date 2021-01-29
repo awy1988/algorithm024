@@ -3,24 +3,36 @@ package Week_01;
 public class Main {
     public static void main(String[] args) {
         MergeTwoSortedLists mergeTwoSortedLists = new MergeTwoSortedLists();
-        ListNode l1 = new ListNode(1);
-        l1.next = new ListNode(2);
-        l1.next.next = new ListNode(4);
-//        while (l1 != null) {
-//            System.out.println(l1.val);
-//            l1 = l1.next;
-//        }
-        ListNode l2 = new ListNode(1);
-        l2.next = new ListNode(3);
-        l2.next.next = new ListNode(4);
-//        while (l2 != null) {
-//            System.out.println(l2.val);
-//            l2 = l2.next;
-//        }
+        ListNode l1 = initListNode(1);
+        ListNode l2 = initListNode(2);
+
         ListNode mergedList = mergeTwoSortedLists.mergeTwoLists(l1,l2);
         while (mergedList != null) {
             System.out.println(mergedList.val);
             mergedList = mergedList.next;
         }
+        l1 = initListNode(1);
+        l2 = initListNode(2);
+        ListNode mergedListWithRecursion = mergeTwoSortedLists.mergeTwoListsWithRecursion(l1, l2);
+        while (mergedListWithRecursion != null) {
+            System.out.println(mergedListWithRecursion.val);
+            mergedListWithRecursion = mergedListWithRecursion.next;
+        }
+    }
+
+    private static ListNode initListNode(int listNo) {
+        ListNode headNode = new ListNode(1);
+
+        switch (listNo) {
+            case 1:
+                headNode.next = new ListNode(2);
+                break;
+            default:
+                headNode.next = new ListNode(3);
+                break;
+        }
+        headNode.next.next = new ListNode(4);
+
+        return headNode;
     }
 }
