@@ -21,15 +21,30 @@ public class MoveZeros {
         int notZeroIndex = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
-                swap(nums, i, notZeroIndex);
+                // 交换元素
+                int temp = nums[i];
+                nums[i] = nums[notZeroIndex];
+                nums[notZeroIndex] = temp;
                 notZeroIndex++;
             }
         }
     }
 
-    void swap(int[] nums, int index1, int index2) {
-        int temp = nums[index1];
-        nums[index1] = nums[index2];
-        nums[index2] = temp;
+    /**
+     * 训练营超哥题解
+     * @param nums
+     */
+    public void moveZeroes2(int[] nums) {
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[j] = nums[i];
+                if (i != j) {
+                    // 如果 i = j,那么不能将i处的结果设置为0，因为要保证 j 指向的内容不为0
+                    nums[i] = 0;
+                }
+                j++;
+            }
+        }
     }
 }
