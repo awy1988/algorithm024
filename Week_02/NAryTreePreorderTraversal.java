@@ -1,7 +1,6 @@
 package Week_02;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * 589. N叉树的前序遍历
@@ -48,13 +47,27 @@ public class NAryTreePreorderTraversal {
     }
 
     /**
-     * 迭代方式实现
+     * 迭代方式实现先序遍历N叉树。
      * @param root
      * @return
      */
     public List<Integer> preorder2(Node root) {
         List<Integer> result = new ArrayList<>();
-
+        // 迭代的方式解决实际上是要借助自己提供的栈结构来实现
+        Stack<Node> stack = new Stack<>();
+        // 遍历所有节点，先访问本节点，然后将子节点倒序入栈，
+        // 然后遍历栈中元素
+        // 将取出的元素继续遍历其子节点，每取出一个节点，就遍历其所有子节点
+        if (root == null) return result;
+        stack.push(root);
+        while(!stack.isEmpty()) {
+            result.add(root.val);
+            Collections.reverse(root.children);
+            for (Node node : root.children) {
+                stack.push(node);
+            }
+            root = stack.pop();
+        }
         return result;
     }
 }
