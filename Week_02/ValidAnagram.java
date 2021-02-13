@@ -1,7 +1,6 @@
 package Week_02;
 
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * 242. 有效的字母异位词
