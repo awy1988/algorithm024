@@ -112,3 +112,44 @@ def divide_conquer(problem, param1, param2...):
 ## 2021.2.15
 ### 每日一题
 作业：[组合](https://leetcode-cn.com/problems/combinations/solution/hua-jie-suan-fa-77-zu-he-by-guanpengchn/)
+
+
+## 2021.2.16
+### 每日一题
+作业：[全排列](https://leetcode-cn.com/problems/permutations/)
+
+在这里找到了一个题解关于递归与回溯部分的习题汇总：
+[回溯算法入门级详解 + 练习（持续更新）](https://leetcode-cn.com/problems/permutations/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liweiw/)
+题型一：排列、组合、子集相关问题
+- [46. 全排列（中等）](https://leetcode-cn.com/problems/permutations/)
+- [47. 全排列 II（中等）](https://leetcode-cn.com/problems/permutations-ii/) ：思考为什么造成了重复，如何在搜索之前就判断这一支会产生重复；
+- [39. 组合总和（中等）](https://leetcode-cn.com/problems/combination-sum/)
+- [40. 组合总和 II（中等）](https://leetcode-cn.com/problems/combination-sum-ii/)
+- [77. 组合（中等）](https://leetcode-cn.com/problems/combinations/)
+- [78. 子集（中等）](https://leetcode-cn.com/problems/subsets/)
+- [90. 子集 II（中等）](https://leetcode-cn.com/problems/subsets-ii/) ：剪枝技巧同 47 题、39 题、40 题；
+- [60. 第 k 个排列（中等）](https://leetcode-cn.com/problems/permutation-sequence/) ：利用了剪枝的思想，减去了大量枝叶，直接来到需要的叶子结点；
+- [93. 复原 IP 地址（中等）](https://leetcode-cn.com/problems/restore-ip-addresses/)
+
+题型二：Flood Fill
+提示：Flood 是「洪水」的意思，Flood Fill 直译是「泛洪填充」的意思，体现了洪水能够从一点开始，迅速填满当前位置附近的地势低的区域。类似的应用还有：PS 软件中的「点一下把这一片区域的颜色都替换掉」，扫雷游戏「点一下打开一大片没有雷的区域」。
+
+下面这几个问题，思想不难，但是初学的时候代码很不容易写对，并且也很难调试。我们的建议是多写几遍，忘记了就再写一次，参考规范的编写实现（设置 visited 数组，设置方向数组，抽取私有方法），把代码写对。
+
+- [733. 图像渲染（Flood Fill，中等）](https://leetcode-cn.com/problems/flood-fill/)
+- [200. 岛屿数量（中等）](https://leetcode-cn.com/problems/number-of-islands/)
+- [130. 被围绕的区域（中等）](https://leetcode-cn.com/problems/surrounded-regions/)
+- [79. 单词搜索（中等）](https://leetcode-cn.com/problems/word-search/)
+
+题型三：字符串中的回溯问题
+
+- [17. 电话号码的字母组合（中等）](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/) ，[题解；](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/solution/hui-su-sou-suo-wu-xian-shi-hui-su-yan-du-you-xian-/)
+- [784. 字母大小写全排列（中等）；](https://leetcode-cn.com/problems/letter-case-permutation/)
+- [22. 括号生成（中等）](https://leetcode-cn.com/problems/generate-parentheses/) ：这道题广度优先遍历也很好写，可以通过这个问题理解一下为什么回溯算法都是深度优先遍历，并且都用递归来写。   
+
+题型四：游戏问题  
+- [51. N 皇后（困难）](https://leetcode-cn.com/problems/n-queens/) ：其实就是全排列问题，注意设计清楚状态变量，在遍历的时候需要记住一些信息，空间换时间；
+- [37. 解数独（困难）](https://leetcode-cn.com/problems/sudoku-solver/) ：思路同「N 皇后问题」；
+- [488. 祖玛游戏（困难）](https://leetcode-cn.com/problems/zuma-game/)
+- [529. 扫雷游戏（困难）](https://leetcode-cn.com/problems/minesweeper/)
+
