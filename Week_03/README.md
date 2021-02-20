@@ -153,3 +153,6 @@ def divide_conquer(problem, param1, param2...):
 - [488. 祖玛游戏（困难）](https://leetcode-cn.com/problems/zuma-game/)
 - [529. 扫雷游戏（困难）](https://leetcode-cn.com/problems/minesweeper/)
 
+## 2021.2.19
+### 每日一题
+[1. 两数之和](https://leetcode-cn.com/problems/two-sum/)
