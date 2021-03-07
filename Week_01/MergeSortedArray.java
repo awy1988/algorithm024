@@ -13,7 +13,7 @@ package Week_01;
  */
 public class MergeSortedArray {
 
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
+    public void merge1(int[] nums1, int m, int[] nums2, int n) {
 
         // 本题的解法为：数组从后向前遍历
         int nums1Index = m - 1, nums2Index = n - 1;
@@ -32,5 +32,22 @@ public class MergeSortedArray {
             }
             nums1[i] = nums2[nums2Index--];
         }
+    }
+
+    /**
+     * 思路也是从后向前遍历，但是比merge1中的代码要优雅许多。
+     * @param nums1
+     * @param m
+     * @param nums2
+     * @param n
+     */
+    public void merge2(int[] nums1, int m, int[] nums2, int n) {
+        int p1 = m - 1;
+        int p2 = n - 1;
+        int currentIndex = m + n - 1;
+        while(p1 >= 0 && p2 >= 0) {
+            nums1[currentIndex--] = nums1[p1] > nums2[p2] ? nums1[p1--] : nums2[p2--];
+        }
+        if (p1 < 0) System.arraycopy(nums2, 0, nums1,0,p2 + 1);
     }
 }
